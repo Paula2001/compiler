@@ -1,0 +1,12 @@
+/home/paula/compiler/obj/Debug/net6.0/CalcLexer.cs
+/home/paula/compiler/obj/Debug/net6.0/CalcParser.cs
+/home/paula/compiler/obj/Debug/net6.0/CalcListener.cs
+/home/paula/compiler/obj/Debug/net6.0/CalcBaseListener.cs
+/home/paula/compiler/obj/Debug/net6.0/CalcVisitor.cs
+/home/paula/compiler/obj/Debug/net6.0/CalcBaseVisitor.cs
+/home/paula/compiler/obj/Debug/net6.0/compiler.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
+/home/paula/compiler/obj/Debug/net6.0/compiler.csproj.AssemblyReference.cache
+/home/paula/compiler/obj/Debug/net6.0/compiler.GeneratedMSBuildEditorConfig.editorconfig
+/home/paula/compiler/obj/Debug/net6.0/compiler.AssemblyInfoInputs.cache
+/home/paula/compiler/obj/Debug/net6.0/compiler.AssemblyInfo.cs
+/home/paula/compiler/obj/Debug/net6.0/compiler.csproj.CoreCompileInputs.cache
