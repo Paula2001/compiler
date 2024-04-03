@@ -50,12 +50,6 @@ public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitWriteStatement([NotNull] CalcParser.WriteStatementContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CalcParser.writeContent"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitWriteContent([NotNull] CalcParser.WriteContentContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="CalcParser.variableDeclaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

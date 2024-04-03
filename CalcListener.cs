@@ -61,16 +61,6 @@ public interface ICalcListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitWriteStatement([NotNull] CalcParser.WriteStatementContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.writeContent"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterWriteContent([NotNull] CalcParser.WriteContentContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.writeContent"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitWriteContent([NotNull] CalcParser.WriteContentContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.variableDeclaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

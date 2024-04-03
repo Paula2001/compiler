@@ -72,18 +72,6 @@ public partial class CalcBaseListener : ICalcListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitWriteStatement([NotNull] CalcParser.WriteStatementContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.writeContent"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterWriteContent([NotNull] CalcParser.WriteContentContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.writeContent"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitWriteContent([NotNull] CalcParser.WriteContentContext context) { }
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.variableDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>

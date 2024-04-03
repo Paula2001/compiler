@@ -9,15 +9,11 @@ statement:
 	| comment
 	| readStatement;
 
-writeStatement: 'write' writeContent+ ';';
+writeStatement:
+	'write' STRING ',' expr ';'
+	| 'write' STRING ';';
 
-writeContent:
-	STRING
-	| expr
-	| ','; // Allows commas between expressions in a write statement
-
-variableDeclaration:
-	type IDENTIFIER ('=' expr)? ';'; // Allows for variable initialization
+variableDeclaration: type IDENTIFIER ';';
 
 variableAssignment: IDENTIFIER '=' expr ';';
 
@@ -28,27 +24,26 @@ readStatement: 'read' IDENTIFIER (',' IDENTIFIER)* ';';
 type: 'int' | 'float' | 'string' | 'bool';
 
 expr:
+	| statement
+	| type
 	| INT // Integer literal
 	| FLOAT // Floating point literal
 	| STRING // String literal
 	| BOOLEAN // Boolean literal
 	| IDENTIFIER // Variable name
-	| expr '+' expr // Addition, string concatenation
+	| expr '+' expr // Addition or string concatenation
 	| expr '*' expr // Multiplication
 	| expr '/' expr // Division
 	| expr '%' expr // Modulus (remainder)
 	| '(' expr ')'; // Parenthesized expr
 
-INT: [0-9]+ | '-' [0-9]+; // Adjusted to allow negative integers
-FLOAT:
-	[0-9]+ '.' [0-9]*
-	| '-' [0-9]+ '.' [0-9]*; // Adjusted to allow negative floats
+INT: [0-9]+;
+FLOAT: [0-9]+ '.' [0-9]*;
 STRING: '"' (ESC | .)*? '"';
 BOOLEAN: 'true' | 'false';
 IDENTIFIER: [a-zA-Z_][a-zA-Z0-9_]*;
 WS: [ \t\r\n]+ -> skip;
-COMMENT:
-	'//' ~[\r\n]*; // This might be redundant with the 'comment' rule
+COMMENT: '//' ~[\r\n]*;
 NOT_NEWLINE: ~[\r\n];
 NEWLINE: '\r'? '\n' | '\r';
 ESC: '\\' ('"' | 'n' | 't' | '\\' | '/');
