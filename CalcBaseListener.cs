@@ -36,17 +36,113 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class CalcBaseListener : ICalcListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.calc"/>.
+	/// Enter a parse tree produced by <see cref="CalcParser.script"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCalc([NotNull] CalcParser.CalcContext context) { }
+	public virtual void EnterScript([NotNull] CalcParser.ScriptContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.calc"/>.
+	/// Exit a parse tree produced by <see cref="CalcParser.script"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCalc([NotNull] CalcParser.CalcContext context) { }
+	public virtual void ExitScript([NotNull] CalcParser.ScriptContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStatement([NotNull] CalcParser.StatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStatement([NotNull] CalcParser.StatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.writeStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWriteStatement([NotNull] CalcParser.WriteStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.writeStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWriteStatement([NotNull] CalcParser.WriteStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.writeContent"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWriteContent([NotNull] CalcParser.WriteContentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.writeContent"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWriteContent([NotNull] CalcParser.WriteContentContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.variableDeclaration"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterVariableDeclaration([NotNull] CalcParser.VariableDeclarationContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.variableDeclaration"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitVariableDeclaration([NotNull] CalcParser.VariableDeclarationContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.variableAssignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterVariableAssignment([NotNull] CalcParser.VariableAssignmentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.variableAssignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitVariableAssignment([NotNull] CalcParser.VariableAssignmentContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.comment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterComment([NotNull] CalcParser.CommentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.comment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitComment([NotNull] CalcParser.CommentContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.readStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterReadStatement([NotNull] CalcParser.ReadStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.readStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitReadStatement([NotNull] CalcParser.ReadStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterType([NotNull] CalcParser.TypeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitType([NotNull] CalcParser.TypeContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.expr"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -59,18 +155,6 @@ public partial class CalcBaseListener : ICalcListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExpr([NotNull] CalcParser.ExprContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.value"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterValue([NotNull] CalcParser.ValueContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.value"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitValue([NotNull] CalcParser.ValueContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

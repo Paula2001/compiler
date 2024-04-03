@@ -1,0 +1,19 @@
+// Initialize variables
+int x = 5;
+float y = 3.14;
+string name = "Calc Test";
+bool testPassed = false;
+
+// Update variables
+x = x + 10;
+y = y * 2;
+
+// Output values
+write "The value of x is: ", x;
+write "The value of y is: ", y;
+write "Running ", name;
+
+// Read values (assuming implementation for demonstration)
+read x, y;
+
+// Comment: The test script ends here

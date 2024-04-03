@@ -32,21 +32,63 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CalcParser.calc"/>.
+	/// Visit a parse tree produced by <see cref="CalcParser.script"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitCalc([NotNull] CalcParser.CalcContext context);
+	Result VisitScript([NotNull] CalcParser.ScriptContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStatement([NotNull] CalcParser.StatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.writeStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWriteStatement([NotNull] CalcParser.WriteStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.writeContent"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWriteContent([NotNull] CalcParser.WriteContentContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.variableDeclaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitVariableDeclaration([NotNull] CalcParser.VariableDeclarationContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.variableAssignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitVariableAssignment([NotNull] CalcParser.VariableAssignmentContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.comment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitComment([NotNull] CalcParser.CommentContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.readStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitReadStatement([NotNull] CalcParser.ReadStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitType([NotNull] CalcParser.TypeContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CalcParser.expr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitExpr([NotNull] CalcParser.ExprContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CalcParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitValue([NotNull] CalcParser.ValueContext context);
 }

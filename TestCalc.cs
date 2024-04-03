@@ -7,7 +7,8 @@ class TestCalc
     public static void Main()
     {
         // Read from stdin
-        var input = new AntlrInputStream("1+23");
+        string content = File.ReadAllText("./testGrammer");
+        var input = new AntlrInputStream(content);
         var lexer = new CalcLexer(input);
         var tokens = new CommonTokenStream(lexer);
         var parser = new CalcParser(tokens);
