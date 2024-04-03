@@ -4,10 +4,10 @@ using Antlr4.Runtime;
 
 class TestCalc
 {
-    static void Main()
+    public static void Main()
     {
         // Read from stdin
-        var input = new AntlrInputStream(Console.OpenStandardInput());
+        var input = new AntlrInputStream("1+23");
         var lexer = new CalcLexer(input);
         var tokens = new CommonTokenStream(lexer);
         var parser = new CalcParser(tokens);
