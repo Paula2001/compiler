@@ -43,26 +43,52 @@ public class TypeCheckingVisitor : CalcBaseVisitor<object>
         return null;
     }
 
-    //public override object VisitAssignExpr([NotNull] CalcParser.AssignExprContext context)
-    //{
-    //    var id = context.ID().GetText();
-    //    var declaredType = symbolTable.GetType(id);
-    //    
-    //    if (declaredType is null) // If variable is not declared
-    //    {
-    //        Console.WriteLine($"Error: Variable '{id}' not declared.");
-    //        return null; // Skip further checks if the variable is not declared
-    //    }
-//
-    //    var exprType = Visit(context.expr()); // Determine the type of the right-hand side expression
-//
-    //    if (!declaredType.Equals(exprType))
-    //    {
-    //        Console.WriteLine($"Error: Type mismatch. Cannot assign {exprType} to {declaredType}.");
-    //    }
-//
-    //    return base.VisitAssignExpr(context);
-    //}
+    public static bool CanResultBeInt(string expression, out int result)
+    {
+        result = 0;
+        // Check if the expression contains any quotation marks
+        if (expression.Contains("\""))
+        {
+            return false; // Expression contains quotes, so it should fail
+        }
+
+        // Attempt to split the input based on a '+' sign
+        var parts = expression.Split('+');
+        if (parts.Length != 2)
+        {
+            return false; // Not a valid expression for our case
+        }
+
+        return false; // Parsing failed
+    }
+
+    public override object VisitAssignExpr([NotNull] CalcParser.AssignExprContext context)
+    {
+        var id = context.ID().GetText();
+        var declaredType = context.DATA_TYPE().GetText();
+        Console.WriteLine(id);
+        Console.WriteLine(declaredType);
+        var sdasd = context.GetChild(4).GetText();
+        Console.WriteLine(sdasd);
+        if (CanResultBeInt(sdasd, out int result))
+        {
+            Console.WriteLine($"The expression '{sdasd}' can result in an int: {result}");
+        }
+        if (declaredType is null) // If variable is not declared
+        {
+            Console.WriteLine($"Error: Variable '{id}' not declared.");
+            return null; // Skip further checks if the variable is not declared
+        }
+
+        var exprType = Visit(context.expr()); // Determine the type of the right-hand side expression
+
+        if (!declaredType.Equals(exprType))
+        {
+            Console.WriteLine($"Error: Type mismatch. Cannot assign {exprType} to {declaredType}.");
+        }
+
+        return base.VisitAssignExpr(context);
+    }
 
 
     // Visits binary expressions - simplified handling
