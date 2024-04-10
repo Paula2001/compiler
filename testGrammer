@@ -1,3 +1,5 @@
-TEST  = 123 ;
+TEST : string  = 123 ;
+TestTwo : int  = "Asdasd" ;
 
 // tEST FOR COMMENTS
+TestThree : bool = "sad";

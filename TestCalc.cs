@@ -14,7 +14,7 @@ class TestCalc
 
         Console.WriteLine(tree.ToStringTree(parser));
 
-        // var visitor = new TypeCheckingVisitor();
-        // visitor.Visit(tree); // Perform type checking
+        var visitor = new TypeCheckingVisitor();
+        visitor.Visit(tree); // Perform type checking
     }
 }

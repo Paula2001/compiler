@@ -1,20 +1,24 @@
 grammar Calc;
 
-prog: (decl | expr)+ EOF;
+prog: (decl | expr | assignExpr)+ EOF;
 
-decl: ID '=' NUM ';';
-assignExpr: ID '=' expr ';';
+decl: ID ':' DATA_TYPE '=' (NUM | STRING | BOOLEAN) ';';
+assignExpr: ID ':' DATA_TYPE '=' expr ';';
 expr:
 	expr '*' expr
 	| expr '/' expr
 	| expr '+' expr
 	| expr '-' expr
-	| DATA_TYPE
 	| ID
-	| NUM;
+	| NUM
+	| STRING
+	| BOOLEAN;
 
-NUM: '0' | '-'? [1-9][0-9]*;
-ID: [a-zA-Z]+;
-DATA_TYPE: 'int' | 'float' | 'double' | 'char';
 COMMENT: '//' ~[\r\n]* -> skip;
 WS: [ \t\n\r]+ -> skip;
+
+DATA_TYPE: 'int' | 'string' | 'bool';
+ID: [a-zA-Z]+;
+NUM: '0' | '-'? [1-9][0-9]*;
+STRING: '"' (~["\r\n] | '""')* '"';
+BOOLEAN: 'true' | 'false';
