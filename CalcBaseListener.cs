@@ -143,6 +143,18 @@ public partial class CalcBaseListener : ICalcListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitForLoop([NotNull] CalcParser.ForLoopContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.declaration"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterDeclaration([NotNull] CalcParser.DeclarationContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.declaration"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitDeclaration([NotNull] CalcParser.DeclarationContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

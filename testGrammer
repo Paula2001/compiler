@@ -1,8 +1,15 @@
+<Test>
 TEST : string  = 123 ;
 TestTwo : int  = "Asdasd" ;
 IDd: int = 33 + 233; 
 
 // tEST FOR COMMENTS
+
+for ( IDd = 33; ISFf > 1233 ; asdasd ++ ){ 
+    asdd: bool = true;
+    IDd: int = 33 + 233; 
+    XXX: string = "asdasd"; 
+}
 
 for ( IDd = 33; ISFf > 1233 ; asdasd ++ ){ 
     asdd: bool = true;

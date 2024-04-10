@@ -85,4 +85,10 @@ public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitForLoop([NotNull] CalcParser.ForLoopContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDeclaration([NotNull] CalcParser.DeclarationContext context);
 }

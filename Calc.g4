@@ -16,7 +16,8 @@ expr:
 	| forLoop
 	| assignment
 	| up
-	| comparison;
+	| comparison
+	| declaration;
 
 statement: forLoop | OTHER_STATEMENT;
 
@@ -27,7 +28,7 @@ WS: [ \t\n\r]+ -> skip;
 
 DATA_TYPE: 'int' | 'string' | 'bool';
 ID: [a-zA-Z]+;
-NUM: '0' | '-'? [1-9][0-9]*;
+NUM: '0' | '-'? [1-9][0-9]* | [0-9];
 STRING: '"' (~["\r\n] | '""')* '"';
 BOOLEAN: 'true' | 'false';
 assignment: ID '=' NUM;
@@ -41,3 +42,4 @@ forLoop:
 		| assignExpr
 		| statement
 	)+ '}';
+declaration: '<' ID '>';

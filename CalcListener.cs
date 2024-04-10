@@ -120,4 +120,14 @@ public interface ICalcListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitForLoop([NotNull] CalcParser.ForLoopContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDeclaration([NotNull] CalcParser.DeclarationContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDeclaration([NotNull] CalcParser.DeclarationContext context);
 }
