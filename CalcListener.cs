@@ -31,85 +31,35 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface ICalcListener : IParseTreeListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.script"/>.
+	/// Enter a parse tree produced by <see cref="CalcParser.prog"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterScript([NotNull] CalcParser.ScriptContext context);
+	void EnterProg([NotNull] CalcParser.ProgContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.script"/>.
+	/// Exit a parse tree produced by <see cref="CalcParser.prog"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitScript([NotNull] CalcParser.ScriptContext context);
+	void ExitProg([NotNull] CalcParser.ProgContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// Enter a parse tree produced by <see cref="CalcParser.decl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterStatement([NotNull] CalcParser.StatementContext context);
+	void EnterDecl([NotNull] CalcParser.DeclContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// Exit a parse tree produced by <see cref="CalcParser.decl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitStatement([NotNull] CalcParser.StatementContext context);
+	void ExitDecl([NotNull] CalcParser.DeclContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.writeStatement"/>.
+	/// Enter a parse tree produced by <see cref="CalcParser.assignExpr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterWriteStatement([NotNull] CalcParser.WriteStatementContext context);
+	void EnterAssignExpr([NotNull] CalcParser.AssignExprContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.writeStatement"/>.
+	/// Exit a parse tree produced by <see cref="CalcParser.assignExpr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitWriteStatement([NotNull] CalcParser.WriteStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.variableDeclaration"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterVariableDeclaration([NotNull] CalcParser.VariableDeclarationContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.variableDeclaration"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitVariableDeclaration([NotNull] CalcParser.VariableDeclarationContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.variableAssignment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterVariableAssignment([NotNull] CalcParser.VariableAssignmentContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.variableAssignment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitVariableAssignment([NotNull] CalcParser.VariableAssignmentContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.comment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterComment([NotNull] CalcParser.CommentContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.comment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitComment([NotNull] CalcParser.CommentContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.readStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterReadStatement([NotNull] CalcParser.ReadStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.readStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitReadStatement([NotNull] CalcParser.ReadStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CalcParser.type"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterType([NotNull] CalcParser.TypeContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CalcParser.type"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitType([NotNull] CalcParser.TypeContext context);
+	void ExitAssignExpr([NotNull] CalcParser.AssignExprContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CalcParser.expr"/>.
 	/// </summary>

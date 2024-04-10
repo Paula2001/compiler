@@ -1,49 +1,20 @@
 grammar Calc;
 
-script: statement*;
+prog: (decl | expr)+ EOF;
 
-statement:
-	writeStatement
-	| variableDeclaration
-	| variableAssignment
-	| comment
-	| readStatement;
-
-writeStatement:
-	'write' STRING ',' expr ';'
-	| 'write' STRING ';';
-
-variableDeclaration: type IDENTIFIER ';';
-
-variableAssignment: IDENTIFIER '=' expr ';';
-
-comment: '//' NOT_NEWLINE* NEWLINE;
-
-readStatement: 'read' IDENTIFIER (',' IDENTIFIER)* ';';
-
-type: 'int' | 'float' | 'string' | 'bool';
-
+decl: ID '=' NUM ';';
+assignExpr: ID '=' expr ';';
 expr:
-	| statement
-	| type
-	| INT // Integer literal
-	| FLOAT // Floating point literal
-	| STRING // String literal
-	| BOOLEAN // Boolean literal
-	| IDENTIFIER // Variable name
-	| expr '+' expr // Addition or string concatenation
-	| expr '*' expr // Multiplication
-	| expr '/' expr // Division
-	| expr '%' expr // Modulus (remainder)
-	| '(' expr ')'; // Parenthesized expr
+	expr '*' expr
+	| expr '/' expr
+	| expr '+' expr
+	| expr '-' expr
+	| DATA_TYPE
+	| ID
+	| NUM;
 
-INT: [0-9]+;
-FLOAT: [0-9]+ '.' [0-9]*;
-STRING: '"' (ESC | .)*? '"';
-BOOLEAN: 'true' | 'false';
-IDENTIFIER: [a-zA-Z_][a-zA-Z0-9_]*;
-WS: [ \t\r\n]+ -> skip;
-COMMENT: '//' ~[\r\n]*;
-NOT_NEWLINE: ~[\r\n];
-NEWLINE: '\r'? '\n' | '\r';
-ESC: '\\' ('"' | 'n' | 't' | '\\' | '/');
+NUM: '0' | '-'? [1-9][0-9]*;
+ID: [a-zA-Z]+;
+DATA_TYPE: 'int' | 'float' | 'double' | 'char';
+COMMENT: '//' ~[\r\n]* -> skip;
+WS: [ \t\n\r]+ -> skip;
