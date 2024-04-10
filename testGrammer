@@ -1,6 +1,6 @@
 TEST : string  = 123 ;
 TestTwo : int  = "Asdasd" ;
-TestThrsee : int  = 2 + 2 ;
+IDd: int = 33 + 233; 
 
 // tEST FOR COMMENTS
 
