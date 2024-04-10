@@ -2,23 +2,21 @@ grammar Calc;
 
 prog: (decl | expr | assignExpr | statement)+ EOF;
 
-decl: ID ':' DATA_TYPE '=' (NUM | STRING | BOOLEAN) ';';
+decl: ID ':' DATA_TYPE '=' value ';';
 assignExpr: ID ':' DATA_TYPE '=' expr ';';
+
 expr:
-	expr '*' expr
-	| expr '/' expr
-	| expr '+' expr
-	| expr '-' expr
+	expr operation expr
 	| ID
-	| NUM
-	| STRING
-	| BOOLEAN
+	| value
 	| forLoop
 	| assignment
 	| up
 	| comparison
-	| declaration;
+	| declaration
+	| '(' expr ')' symbol = '?' expr ':' expr;
 
+operation: '*' | '/' | '+' | '-' | '?';
 statement: forLoop | OTHER_STATEMENT;
 
 OTHER_STATEMENT: . -> skip;
@@ -26,9 +24,10 @@ OTHER_STATEMENT: . -> skip;
 COMMENT: '//' ~[\r\n]* -> skip;
 WS: [ \t\n\r]+ -> skip;
 
-DATA_TYPE: 'int' | 'string' | 'bool';
+DATA_TYPE: 'int' | 'float' | 'string' | 'bool';
 ID: [a-zA-Z]+;
-NUM: '0' | '-'? [1-9][0-9]* | [0-9];
+value: NUM | STRING | BOOLEAN;
+NUM: '0' | ('-'? [1-9][0-9]* | [0-9]) (.[0-9]+)?;
 STRING: '"' (~["\r\n] | '""')* '"';
 BOOLEAN: 'true' | 'false';
 assignment: ID '=' NUM;

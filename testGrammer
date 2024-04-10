@@ -1,18 +1,25 @@
-<Test>
-TEST : string  = 123 ;
+// <Test>
+// TEST : string  = 123 ;
 TestTwo : int  = "Asdasd" ;
-IDd: int = 33 + 233; 
-
+// IDd: int = 33 + 233; 
+// Testing: float = 33.33 + 233.33;
+// TEst: int = ISFf > 1233 ? Test : Test;
+// TEst: int = false ? Test : Test;
+// Test : int = 123;
+// Test : string = 123 * 1233;
+// Test : int = 123 + 1233;
+Test: int = (15) ? 123 : 123;
+Test: int = (true) ? 123 : 123;
 // tEST FOR COMMENTS
 
-for ( IDd = 33; ISFf > 1233 ; asdasd ++ ){ 
-    asdd: bool = true;
-    IDd: int = 33 + 233; 
-    XXX: string = "asdasd"; 
-}
+// for ( IDd = 33; ISFf > 1233 ; asdasd ++ ){ 
+//     asdd: bool = true;
+//     IDd: int = 33 + 233; 
+//     XXX: string = "asdasd"; 
+// }
 
-for ( IDd = 33; ISFf > 1233 ; asdasd ++ ){ 
-    asdd: bool = true;
-    IDd: int = 33 + 233; 
-    XXX: string = "asdasd"; 
-}
+// for ( IDd = 33; ISFf > 1233 ; asdasd ++ ){ 
+//     asdd: bool = true;
+//     IDd: int = 33 + 233; 
+//     XXX: string = "asdasd"; 
+// }

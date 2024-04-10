@@ -56,11 +56,23 @@ public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitExpr([NotNull] CalcParser.ExprContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.operation"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitOperation([NotNull] CalcParser.OperationContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CalcParser.statement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitStatement([NotNull] CalcParser.StatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitValue([NotNull] CalcParser.ValueContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CalcParser.assignment"/>.
 	/// </summary>
