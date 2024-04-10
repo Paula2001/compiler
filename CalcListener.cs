@@ -70,4 +70,54 @@ public interface ICalcListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitExpr([NotNull] CalcParser.ExprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatement([NotNull] CalcParser.StatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatement([NotNull] CalcParser.StatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAssignment([NotNull] CalcParser.AssignmentContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAssignment([NotNull] CalcParser.AssignmentContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.up"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterUp([NotNull] CalcParser.UpContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.up"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitUp([NotNull] CalcParser.UpContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.comparison"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterComparison([NotNull] CalcParser.ComparisonContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.comparison"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitComparison([NotNull] CalcParser.ComparisonContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.forLoop"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterForLoop([NotNull] CalcParser.ForLoopContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.forLoop"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitForLoop([NotNull] CalcParser.ForLoopContext context);
 }

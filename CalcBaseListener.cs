@@ -83,6 +83,66 @@ public partial class CalcBaseListener : ICalcListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExpr([NotNull] CalcParser.ExprContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStatement([NotNull] CalcParser.StatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStatement([NotNull] CalcParser.StatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.assignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAssignment([NotNull] CalcParser.AssignmentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.assignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAssignment([NotNull] CalcParser.AssignmentContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.up"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUp([NotNull] CalcParser.UpContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.up"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUp([NotNull] CalcParser.UpContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.comparison"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterComparison([NotNull] CalcParser.ComparisonContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.comparison"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitComparison([NotNull] CalcParser.ComparisonContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CalcParser.forLoop"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterForLoop([NotNull] CalcParser.ForLoopContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CalcParser.forLoop"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitForLoop([NotNull] CalcParser.ForLoopContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

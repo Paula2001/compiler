@@ -3,4 +3,9 @@ TestTwo : int  = "Asdasd" ;
 TestThrsee : int  = 2 + 2 ;
 
 // tEST FOR COMMENTS
-TestThree : bool = "sad";
+
+for ( IDd = 33; ISFf > 1233 ; asdasd ++ ){ 
+    asdd: bool = true;
+    IDd: int = 33 + 233; 
+    XXX: string = "asdasd"; 
+}

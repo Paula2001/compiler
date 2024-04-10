@@ -55,4 +55,34 @@ public interface ICalcVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitExpr([NotNull] CalcParser.ExprContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStatement([NotNull] CalcParser.StatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAssignment([NotNull] CalcParser.AssignmentContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.up"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUp([NotNull] CalcParser.UpContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.comparison"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitComparison([NotNull] CalcParser.ComparisonContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CalcParser.forLoop"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitForLoop([NotNull] CalcParser.ForLoopContext context);
 }
